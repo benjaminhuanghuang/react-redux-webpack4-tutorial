@@ -67,7 +67,12 @@
 
 ## How Redux works
     The Redux store exposes a simple API for managing the state. 
-    The most important methods are:
-    - getState for accessing the current state of the application
-    - dispatch for dispatching an action
-    - subscribe for listening on state changes
+    The most important methods on store are:
+    - getState() for accessing the current state of the application
+    - dispatch() for dispatching an action
+    ```
+        dispatch( addArticle({ name: 'React Redux Tutorial for Beginners', id: 1 }) )
+    ```
+    - subscribe() for listening on state changes. The subscribe method accepts a callback that will fire whenever an action is dispatched. 
+
+## How to couple React and Redux together.
