@@ -4,6 +4,7 @@
 ## What is state
     Every stateful React component carries its own state. In a React component the state holds up data.  
     State is immutable and cannot change in place.
+    A stateful component in React is a component carrying its own local state
 
     The component might render such data to the user.
 
@@ -69,10 +70,20 @@
     The Redux store exposes a simple API for managing the state. 
     The most important methods on store are:
     - getState() for accessing the current state of the application
+    ```
+        store.getState()
+    ```
     - dispatch() for dispatching an action
     ```
-        dispatch( addArticle({ name: 'React Redux Tutorial for Beginners', id: 1 }) )
+        store.dispatch( addArticle({ name: 'React Redux Tutorial for Beginners', id: 1 }) )
     ```
     - subscribe() for listening on state changes. The subscribe method accepts a callback that will fire whenever an action is dispatched. 
+    ```
+        store.subscribe(() => console.log('Look ma, Redux!!'))
+    ```
+## Couple React and Redux together
+    - mapStateToProps: connects a part of the Redux state to the props of a React component
+    - mapDispatchToProps: connects Redux actions to React props. This way a connected React component will be able to dispatch actions.
+    - Provider: Provider is an high order component coming from react-redux, wraps up your React application and makes it aware of the entire Redux’s store.
 
-## How to couple React and Redux together.
+
